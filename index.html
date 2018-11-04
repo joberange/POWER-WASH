@@ -1,0 +1,374 @@
+<!DOCTYPE=html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Range-Wash App
+    </title>
+    <link rel="stylesheet" type="css/text" href="assets/css/reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+
+    <!-- Team's CSS file -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body class="clearfix">
+
+    <div class="modal" id="modal-empty" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Oops!</h5>
+                    <span aria-hidden="true">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Required</p>
+                    <ul>
+                        <li>Name</li>
+                        <li>Email</li>
+                        <li>Street Address</li>
+                        <li>City</li>
+                        <li>State</li>
+                        <li>Zipcode</li>
+                        <li>Description</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-zero" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thank You for your Business!</h5>
+                    <span aria-hidden="true">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <div class="form-group" id="receipt"></div>
+                        <div class="form-group col-md-6" id="mapWindow"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <button class="btn btn-dark" id="home-button">
+                            Range-Wash
+                        </button>
+                    </li>
+                    <li class="nav-item active">
+                        <button class="btn btn-dark" id="equipment-button">
+                            Equipment
+                        </button>
+                    </li>
+                    <li class="nav-item active">
+                        <button class="btn btn-dark" id="pricing-button">
+                            Pricing
+                        </button>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Services/Estimates
+                        </a>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <button class="btn btn-dark" id="residential-button"> Residential</button>
+                            <button class="btn btn-dark" id="commercial-button"> Commercial</button>
+                            <button class="btn btn-dark" id="industrial-button"> Industrial</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- Container for majority of page content -->
+            <div class="jumbotron card bg-light">
+                <!-- All Pages rendered in this jumbotron in unique divs -->
+                <div class="home">
+                    <h1 class="card-head">
+                        Range-Wash
+                    </h1>
+                    <div class="card-body">
+                        <h5>
+                            Servicing the greater SF Bay Area, with any and all pressure washing needs. Range-Wash is a
+                            professional cleaning service commited to superb customer service. If the service pered
+                            is not to the custmoers satisfaction, we will perform the service again to the customer's
+                            satisfaction and provide a 25% discount on the next service.
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="equipment">
+                    <h1 class="card-head">
+                        Equipment
+                    </h1>
+                    <div class="card-body">
+                        <img class="img" src="assets/images/washer-2.jpg">
+                        <h5>
+                            The UHP170 units are extremely versatile and allow customers to choose from many options;
+                            for example the unit can be offered with a trailer, but without the sound hood. The frame
+                            includes a 53 gallon (200 liter) integrated fuel tank allowing a full day of continuous
+                            duty operation. For crane transport, an optional central lifting lug can be attached to the
+                            high pressure water blaster. The diesel motor has substantial reserve power for operation
+                            in various extreme climatic environments. Thus, the UHP170 unit is able to operate in high
+                            altitudes and temperatures without any loss of power.
+                        </h5>
+                        <img class="img" src="./assets/images/lift-2.jpg">
+                        <h5>
+                            19' scissor lift, enabling greater access for cleaning second story buildings, roofs and
+                            other tall objects.
+                        </h5>
+                        <img class="img" src="./assets/images/soap-1.jpg">
+                        <h5>
+                            Building Interior/Exterior Cleaner is safe to use on aluminum, stainless steel, glass,
+                            plastic, paint, stone and masonry surfaces. Building Interior/Exterior Cleaner is ideal for
+                            power washing around a home or shop, including exterior walls, decks, driveways, and roof.
+                            This formula is phosphate-free and outpers most competitive phosphate products.
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="pricing">
+                    <h1 class="card-head">
+                        Pricing
+                    </h1>
+                    <div class="card-body">
+                        <h5>
+                            This example is a quick exercise to illustrate how the top-aligned navbar works. As you
+                            scroll, this navbar remains in its original position and moves with the rest of the page.
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="residential">
+                    <h1 class="card-head">
+                        Residential
+                    </h1>
+                    <div class="card-body">
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4>Driveway - $100*</h4>
+                                    <img class="img" src="assets/images/driveway-1.jpg">
+                                </li>
+                                <br><br>
+                                <li>
+                                    <h4>House - $100/Story</h4>
+                                    <img class="img" src="assets/images/house-1.png">
+                                </li>
+                                <br><br>
+                                <li>
+                                    <h4>Patio/Backyard - $100*</h4>
+                                    <img class="img" src="assets/images/patio-1.jpeg">
+                                </li>
+                            </ul>
+                            <p>*All online estimates are subject to change upon physcial examination of job.</p>
+                        </div>
+                        <br><br>
+                        <div>
+                            <form>
+                                <h3>Set Up an Appointment for a Free Estimate!</h3>
+                                <div class="form-group">
+                                    <label for="nameInput">Name</label>
+                                    <input id="nameInput" type="text" class="form-control" value="" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailInput">Email</label>
+                                    <input id="emailInput" type="text" class="form-control" value="" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="streetAddressInput">Street Address</label>
+                                    <input id="streetAddressInput" type="text" class="form-control" value="" placeholder="123 Main St.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cityInput">City</label>
+                                    <input id="cityInput" type="text" class="form-control" value="" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stateInput">State</label>
+                                    <input id="stateInput" type="text" class="form-control" value="" placeholder="State">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipcodeInput">Zipcode</label>
+                                    <input id="zipcodeInput" type="text" class="form-control" value="" placeholder="11111">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" type="text" class="form-control" value="" placeholder="Describe Desired Services"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="submit-1">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="commercial">
+                    <h1 class="card-head">
+                        Commercial
+                    </h1>
+                    <div class="card-body">
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4>Store Front - $300*</h4>
+                                    <img class="img" src="assets/images/store-1.jpg">
+                                </li>
+                                <br><br>
+                                <li>
+                                    <h4>Parling Lot - $500*</h4>
+                                    <img class="img" src="assets/images/lot-1.jpg">
+                                </li>
+                                <br><br>
+                                <li>
+                                    <h4>Restaurant/Grease Trap - $500*</h4>
+                                    <img class="img" src="assets/images/rest-1.jpg">
+                                </li>
+                            </ul>
+                            <p>*All online estimates are subject to change upon physcial examination of job.</p>
+                        </div>
+                        <br><br>
+                        <div>
+                            <form>
+                                <h3>Set Up an Appointment for a Free Estimate!</h3>
+                                <div class="form-group">
+                                    <label for="nameInput">Name</label>
+                                    <input id="nameInput" type="text" class="form-control" value="" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailInput">Email</label>
+                                    <input id="emailInput" type="text" class="form-control" value="" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="streetAddressInput">Street Address</label>
+                                    <input id="streetAddressInput" type="text" class="form-control" value="" placeholder="123 Main St.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cityInput">City</label>
+                                    <input id="cityInput" type="text" class="form-control" value="" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stateInput">State</label>
+                                    <input id="stateInput" type="text" class="form-control" value="" placeholder="State">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipcodeInput">Zipcode</label>
+                                    <input id="zipcodeInput" type="text" class="form-control" value="" placeholder="11111">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" type="text" class="form-control" value="" placeholder="Describe Desired Services"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="submit-2">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industrial">
+                    <h1 class="card-head">
+                        Industrial
+                    </h1>
+                    <div class="card-body">
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4>Workspace - $1000*</h4>
+                                    <img class="img" src="assets/images/ind-int-1.jpg">
+                                </li>
+                                <br><br>
+                                <li>
+                                    <h4>Building - Exterior - $500/Story</h4>
+                                    <img class="img" src="assets/images/ind-ext-1.jpg">
+                                </li>
+                                <br><br>
+                                <li>
+                                    <h4>Heavy Equipment - $200*</h4>
+                                    <img class="img" src="assets/images/euip-1.jpg">
+                                </li>
+                            </ul>
+                            <p>*All online estimates are subject to change upon physcial examination of job.</p>
+                        </div>
+                        <br><br>
+                        <div>
+                            <form>
+                                <h3>Set Up an Appointment for a Free Estimate!</h3>
+                                <div class="form-group">
+                                    <label for="nameInput">Name</label>
+                                    <input id="nameInput" type="text" class="form-control" value="" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailInput">Email</label>
+                                    <input id="emailInput" type="text" class="form-control" value="" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="streetAddressInput">Street Address</label>
+                                    <input id="streetAddressInput" type="text" class="form-control" value="" placeholder="123 Main St.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cityInput">City</label>
+                                    <input id="cityInput" type="text" class="form-control" value="" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stateInput">State</label>
+                                    <input id="stateInput" type="text" class="form-control" value="" placeholder="State">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipcodeInput">Zipcode</label>
+                                    <input id="zipcodeInput" type="text" class="form-control" value="" placeholder="11111">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" type="text" class="form-control" value="" placeholder="Describe Desired Services"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="submit-3">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Links for Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+
+    <!-- App JS file -->
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
