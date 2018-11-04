@@ -6,15 +6,15 @@ Future functionality would build the site to accept reviews, and have an email c
 
 
 Tech:
-  Firebase
-  Google Maps API
-  Bootstrap
-  JQuery
+  Firebase,
+  Google Maps API,
+  Bootstrap,
+  JQuery,
   Modals
   
  Future Tech:
-  Emailer
-  Review System
-  User Profiles
+  Emailer,
+  Review System,
+  User Profiles,
   Calender
   
