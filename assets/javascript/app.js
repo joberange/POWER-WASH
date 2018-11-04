@@ -1,3 +1,11 @@
+const name = ($("#nameInput").val().trim()).toUpperCase();
+const email = ($("#emailInput").val().trim()).toUpperCase();
+const streetAddress = ($("#streetAddressInput").val().trim()).toUpperCase();
+const city = ($("#cityInput").val().trim()).toUpperCase();
+const state = ($("#stateInput").val().trim()).toUpperCase();
+const zipCode = $("#zipcodeInput").val().trim();
+const description = ($("#description").val().trim());
+
 $(document).ready(function () {
     // Initialize Firebase
     var config = {
@@ -72,7 +80,9 @@ $(document).ready(function () {
         $(".industrial").show();
     });
 
-
+    $("#close").on("click", function () {
+        $(".modal-body").empty();
+    });
 
     function renderMap(streetAddress, city, state, zipCode) {
 
@@ -94,13 +104,13 @@ $(document).ready(function () {
         $("#receipt").append(addCard);
     };
 
-    const name = ($("#nameInput").val().trim()).toUpperCase();
-    const email = ($("#emailInput").val().trim()).toUpperCase();
-    const streetAddress = ($("#streetAddressInput").val().trim()).toUpperCase();
-    const city = ($("#cityInput").val().trim()).toUpperCase();
-    const state = ($("#stateInput").val().trim()).toUpperCase();
-    const zipCode = $("#zipcodeInput").val().trim();
-    const description = ($("#description").val().trim());
+    // const name = ($("#nameInput").val().trim()).toUpperCase();
+    // const email = ($("#emailInput").val().trim()).toUpperCase();
+    // const streetAddress = ($("#streetAddressInput").val().trim()).toUpperCase();
+    // const city = ($("#cityInput").val().trim()).toUpperCase();
+    // const state = ($("#stateInput").val().trim()).toUpperCase();
+    // const zipCode = $("#zipcodeInput").val().trim();
+    // const description = ($("#description").val().trim());
 
 
     // Create functions for each modal
