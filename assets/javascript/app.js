@@ -11,28 +11,16 @@ $(document).ready(function () {
     firebase.initializeApp(config);
 
     var database = firebase.database();
-    //set global variables for the input fields
 
-    // database.ref().push({
-    //     name: name,
-    //     email: email,
-    //     streetAddress: streetAddress,
-    //     city: city,
-    //     state: state,
-    //     zipCode: zipCode,
-    //     description: description
-    // });
-
-    // Hide restaurant table and others table when page is loaded
     $(".equipment").hide();
-    $(".pricing").hide();
+    $(".reviews").hide();
     $(".residential").hide();
     $(".commercial").hide();
     $(".industrial").hide();
 
     $("#home-button").on("click", function () {
         $(".equipment").hide();
-        $(".pricing").hide();
+        $(".reviews").hide();
         $(".residential").hide();
         $(".commercial").hide();
         $(".industrial").hide();
@@ -41,25 +29,25 @@ $(document).ready(function () {
 
     $("#equipment-button").on("click", function () {
         $(".home").hide();
-        $(".pricing").hide();
+        $(".reviews").hide();
         $(".residential").hide();
         $(".commercial").hide();
         $(".industrial").hide();
         $(".equipment").show();
     });
 
-    $("#pricing-button").on("click", function () {
+    $("#reviews-button").on("click", function () {
         $(".home").hide();
         $(".equipment").hide();
         $(".residential").hide();
         $(".commercial").hide();
         $(".industrial").hide();
-        $(".pricing").show();
+        $(".reviews").show();
     });
 
     $("#residential-button").on("click", function () {
         $(".home").hide();
-        $(".pricing").hide();
+        $(".reviews").hide();
         $(".equipment").hide();
         $(".commercial").hide();
         $(".industrial").hide();
@@ -68,7 +56,7 @@ $(document).ready(function () {
 
     $("#commercial-button").on("click", function () {
         $(".home").hide();
-        $(".pricing").hide();
+        $(".reviews").hide();
         $(".residential").hide();
         $(".equipment").hide();
         $(".industrial").hide();
@@ -77,7 +65,7 @@ $(document).ready(function () {
 
     $("#industrial-button").on("click", function () {
         $(".home").hide();
-        $(".pricing").hide();
+        $(".reviews").hide();
         $(".residential").hide();
         $(".commercial").hide();
         $(".equipment").hide();
@@ -87,7 +75,7 @@ $(document).ready(function () {
 
 
     function renderMap(streetAddress, city, state, zipCode) {
-        
+
         var apiResult = "https://www.google.com/maps/embed/v1/search?q=" + streetAddress + city + state + zipCode + "&key=AIzaSyDzd8udb7o2Ms2UBhL0PVbszc0Seo38DFY";
 
         // create iframe emelment and set that to a variable with the API result URL
@@ -113,7 +101,7 @@ $(document).ready(function () {
     const state = ($("#stateInput").val().trim()).toUpperCase();
     const zipCode = $("#zipcodeInput").val().trim();
     const description = ($("#description").val().trim());
-    
+
 
     // Create functions for each modal
     function modalEmpty() {
@@ -124,21 +112,14 @@ $(document).ready(function () {
         $('#modal-zero').modal('show');
     };
 
-    // // Input validations
-    // if ((name === '') || (email === '') || (streetAddress === '') || (city === '') || (state === '') || (zipCode === '') || (description === '')) {
-    //     modalEmpty();
-    //     return false;
-    // }
-console.log(name);
-
     $("#submit-1").on("click", function () {
         event.preventDefault();
         if ((name === '') || (email === '') || (streetAddress === '') || (city === '') || (state === '') || (zipCode === '') || (description === '')) {
-        //     modalEmpty();
-        //     console.log("fail");
-        // } else {
+            //     modalEmpty();
+            //     console.log("fail");
+            // } else {
             $(".home").hide();
-            $(".pricing").hide();
+            $(".reviews").hide();
             $(".equipment").hide();
             $(".commercial").hide();
             $(".industrial").hide();
@@ -163,11 +144,11 @@ console.log(name);
     $("#submit-2").on("click", function () {
         event.preventDefault();
         if ((name === '') || (email === '') || (streetAddress === '') || (city === '') || (state === '') || (zipCode === '') || (description === '')) {
-        //     modalEmpty();
-        //     console.log("fail");
-        // } else {
+            //     modalEmpty();
+            //     console.log("fail");
+            // } else {
             $(".home").hide();
-            $(".pricing").hide();
+            $(".reviews").hide();
             $(".residential").hide();
             $(".equipment").hide();
             $(".industrial").hide();
@@ -192,11 +173,11 @@ console.log(name);
     $("#submit-3").on("click", function () {
         event.preventDefault();
         if ((name === '') || (email === '') || (streetAddress === '') || (city === '') || (state === '') || (zipCode === '') || (description === '')) {
-        //     modalEmpty();
-        //     console.log("fail");
-        // } else {
+            //     modalEmpty();
+            //     console.log("fail");
+            // } else {
             $(".home").hide();
-            $(".pricing").hide();
+            $(".reviews").hide();
             $(".residential").hide();
             $(".commercial").hide();
             $(".equipment").hide();
@@ -218,99 +199,5 @@ console.log(name);
         });
 
     })
-
-    // // Hide restaurant table and others table when page is loaded
-    // $(".equipment").hide();
-    // $(".pricing").hide();
-    // $(".residential").hide();
-    // $(".commercial").hide();
-    // $(".industrial").hide();
-
-    // $("#home-button").on("click", function () {
-    //     $(".equipment").hide();
-    //     $(".pricing").hide();
-    //     $(".residential").hide();
-    //     $(".commercial").hide();
-    //     $(".industrial").hide();
-    //     $(".home").show();
-    // });
-
-    // $("#equipment-button").on("click", function () {
-    //     $(".home").hide();
-    //     $(".pricing").hide();
-    //     $(".residential").hide();
-    //     $(".commercial").hide();
-    //     $(".industrial").hide();
-    //     $(".equipment").show();
-    // });
-
-    // $("#pricing-button").on("click", function () {
-    //     $(".home").hide();
-    //     $(".equipment").hide();
-    //     $(".residential").hide();
-    //     $(".commercial").hide();
-    //     $(".industrial").hide();
-    //     $(".pricing").show();
-    // });
-
-    // $("#residential-button").on("click", function () {
-    //     $(".home").hide();
-    //     $(".pricing").hide();
-    //     $(".equipment").hide();
-    //     $(".commercial").hide();
-    //     $(".industrial").hide();
-    //     $(".residential").show();
-    // });
-
-    // $("#commercial-button").on("click", function () {
-    //     $(".home").hide();
-    //     $(".pricing").hide();
-    //     $(".residential").hide();
-    //     $(".equipment").hide();
-    //     $(".industrial").hide();
-    //     $(".commercial").show();
-    // });
-
-    // $("#industrial-button").on("click", function () {
-    //     $(".home").hide();
-    //     $(".pricing").hide();
-    //     $(".residential").hide();
-    //     $(".commercial").hide();
-    //     $(".equipment").hide();
-    //     $(".industrial").show();
-    // });
-
-    // var request = require('request');
-
-    // function subscribe(req, res, next) {
-    //     var email = req.body.email; //Email entered
-    //     var dataCenter = 'us1';
-    //     var apiKey = 'API_KEY';
-    //     var listID = 'LIST_ID';
-    //     //Request settings
-    //     var options = {
-    //         url: `https://${dataCenter}.api.mailchimp.com/3.0/lists/${listID}/members`,
-    //         method: 'POST',
-    //         headers: { 'content-type': 'application/json', 'Authorization': `apikey ${apiKey}` },
-    //         body: JSON.stringify({ email_address: email, status: 'subscribed' })
-    //     }
-    //     // Make a simple POST call to MailChimp
-    //     request(options, function (error, response, body) {
-    //         try {
-    //             var respObj = {}; //Initial response object
-    //             if (response.statusCode === 200) {
-    //                 respObj = { success: `Subscribed using ${email}!`, message: JSON.parse(response.body) };
-    //             } else {
-    //                 respObj = { error: `Error trying to subscribe ${email}. Please try again.`, message: JSON.parse(response.body) };
-    //             }
-    //             res.send(respObj);
-    //         } catch (err) {
-    //             var respErrorObj = { error: 'There was an error with your request', message: err.message };
-    //             res.send(respErrorObj);
-    //         }
-    //     });
-    //     next();
-    // }
-
 
 });
